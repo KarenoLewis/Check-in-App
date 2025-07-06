@@ -1,0 +1,164 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to the top */
+    min-height: 100vh;
+    background-color: #f0f2f5;
+    margin: 2rem 0; /* Add some margin to the top and bottom */
+}
+
+#container {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    width: 90%;
+    max-width: 1000px; /* Increased max-width */
+    text-align: center;
+}
+
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.roster-section, .checked-in-section {
+    flex: 1;
+    text-align: left;
+}
+
+#qr-reader {
+    width: 400px; /* Fixed width */
+    margin: 0 auto 1rem auto; /* Centered */
+    border: 2px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#result {
+    padding: 1rem;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    color: #495057;
+}
+
+h2 {
+    color: #333;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+    margin-top: 2rem;
+}
+
+.roster-management {
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+#student-roster, #checked-in-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+}
+
+#student-roster li, #checked-in-list li {
+    background: #f8f9fa;
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#student-roster li:last-child, #checked-in-list li:last-child {
+    border-bottom: none;
+}
+
+.student-info, .roster-student-info {
+    font-weight: 500;
+}
+
+.timestamp {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+.roster-actions button {
+    margin-left: 0.5rem;
+}
+
+/* Modal styles */
+.modal {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 2rem;
+    border: 1px solid #888;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover, .close-button:focus {
+    color: black;
+}
+
+#edit-modal input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#upload-csv {
+    background-color: #007bff;
+    color: white;
+}
+
+#delete-selected {
+    background-color: #dc3545;
+    color: white;
+}
+
+#save-edit {
+    background-color: #28a745;
+    color: white;
+}

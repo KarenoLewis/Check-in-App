@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Student Check-in</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Student Check-in</h1>
+        <div id="qr-reader" style="width: 500px;"></div>
+        <div id="result">Scan a QR code to check in a student.</div>
+
+        <div class="main-content">
+            <div class="roster-section">
+                <h2>Student Roster</h2>
+                <div class="roster-management">
+                    <input type="file" id="csv-file" accept=".csv">
+                    <button id="upload-csv">Upload Roster</button>
+                    <button id="delete-selected" style="display: none;">Delete Selected</button>
+                </div>
+                <ul id="student-roster">
+                    <!-- Roster will be populated here -->
+                </ul>
+            </div>
+            <div class="checked-in-section">
+                <h2>Checked-in Students</h2>
+                <ul id="checked-in-list">
+                    <!-- Checked-in students will appear here -->
+                </ul>
+            </div>
+        </div>
+
+        <!-- Modal for editing a student -->
+        <div id="edit-modal" class="modal" style="display:none;">
+            <div class="modal-content">
+                <span class="close-button">&times;</span>
+                <h3>Edit Student</h3>
+                <input type="hidden" id="edit-id-original">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name" placeholder="Student Name">
+                <label for="edit-id">ID:</label>
+                <input type="text" id="edit-id" placeholder="Student ID">
+                <button id="save-edit">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/html5-qrcode@2.0.9/dist/html5-qrcode.min.js"></script>
+    <script src="app.js?v=1.1"></script>
+</body>
+</html>
