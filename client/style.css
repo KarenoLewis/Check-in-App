@@ -1,98 +1,205 @@
+/* Instructions Section */
+.instructions {
+    background-color: #eef7ff; /* Light blue background */
+    border: 1px solid #cce5ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.instructions h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    border-top: none; /* Remove top border for this h2 */
+    padding-top: 0;
+}
+
+.instructions ol {
+    padding-left: 1.5rem;
+    margin: 0;
+}
+
+.instructions li {
+    margin-bottom: 0.7rem;
+    line-height: 1.5;
+    color: #34495e;
+}
+
+.instructions li strong {
+    color: #28a745; /* Green for emphasis */
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: flex-start; /* Align to the top */
     min-height: 100vh;
-    background-color: #f0f2f5;
+    background-color: #eef2f6; /* Lighter, modern background */
     margin: 2rem 0; /* Add some margin to the top and bottom */
+    color: #333;
 }
 
 #container {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    width: 90%;
-    max-width: 1000px; /* Increased max-width */
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Softer, larger shadow */
+    width: 95%;
+    max-width: 1100px; /* Slightly increased max-width */
     text-align: center;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+h1 {
+    color: #2c3e50; /* Darker heading color */
+    margin-bottom: 1.5rem;
+    font-size: 2.2em;
+}
+
+h2 {
+    color: #34495e; /* Slightly lighter heading color */
+    border-top: 1px solid #ecf0f1; /* Subtle border */
+    padding-top: 1.5rem;
+    margin-top: 2.5rem;
+    font-size: 1.6em;
+}
+
+#qr-reader {
+    width: 100%; /* Make it flexible */
+    max-width: 400px; /* Max width for larger screens */
+    margin: 0 auto 2rem auto;
+    border: 1px solid #ddd; /* Lighter border */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Inner shadow */
+}
+
+#result {
+    padding: 1.2rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    color: #495057;
+    font-size: 1.1em;
+    font-weight: 500;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 .main-content {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 2.5rem; /* Increased gap */
     margin-top: 2rem;
 }
 
 .roster-section, .checked-in-section {
     flex: 1;
     text-align: left;
-}
-
-#qr-reader {
-    width: 400px; /* Fixed width */
-    margin: 0 auto 1rem auto; /* Centered */
-    border: 2px solid #eee;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-#result {
-    padding: 1rem;
-    background-color: #e9ecef;
-    border-radius: 8px;
-    margin-bottom: 1rem;
-    color: #495057;
-}
-
-h2 {
-    color: #333;
-    border-top: 1px solid #eee;
-    padding-top: 1rem;
-    margin-top: 2rem;
+    background: #fdfdfd;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 
 .roster-management {
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     gap: 1rem;
     align-items: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+#csv-file {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    white-space: nowrap; /* Prevent text wrapping on buttons */
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+#upload-csv {
+    background-color: #28a745; /* Green for upload */
+    color: white;
+}
+
+#upload-csv:hover {
+    background-color: #218838;
+}
+
+#delete-selected {
+    background-color: #dc3545; /* Red for delete */
+    color: white;
+}
+
+#delete-selected:hover {
+    background-color: #c82333;
+}
+
+.roster-actions button {
+    background-color: #007bff; /* Blue for edit/delete in roster */
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85em;
+}
+
+.roster-actions button:hover {
+    background-color: #0056b3;
 }
 
 #student-roster, #checked-in-list {
     list-style-type: none;
     padding: 0;
-    max-height: 400px;
+    max-height: 450px; /* Slightly increased height */
     overflow-y: auto;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #ffffff;
 }
 
 #student-roster li, #checked-in-list li {
-    background: #f8f9fa;
-    padding: 0.75rem 1.25rem;
-    border-bottom: 1px solid #dee2e6;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid #e9ecef;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.95em;
 }
 
 #student-roster li:last-child, #checked-in-list li:last-child {
     border-bottom: none;
 }
 
-.student-info, .roster-student-info {
-    font-weight: 500;
+#student-roster li:nth-child(even) {
+    background-color: #f8f9fa; /* Zebra striping */
+}
+
+.roster-student-info {
+    font-weight: 600;
+    color: #34495e;
+    flex-grow: 1; /* Allow info to take available space */
+    margin-right: 1rem;
 }
 
 .timestamp {
-    color: #6c757d;
-    font-size: 0.9em;
-}
-
-.roster-actions button {
-    margin-left: 0.5rem;
+    color: #7f8c8d;
+    font-size: 0.85em;
 }
 
 /* Modal styles */
@@ -104,7 +211,7 @@ h2 {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.6); /* Darker overlay */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,53 +219,136 @@ h2 {
 
 .modal-content {
     background-color: #fefefe;
-    padding: 2rem;
-    border: 1px solid #888;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 400px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 2.5rem;
+    border: none; /* Remove border */
+    border-radius: 10px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2); /* More prominent shadow */
+    text-align: left;
+}
+
+.modal-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 1.5rem;
 }
 
 .close-button {
-    color: #aaa;
+    color: #7f8c8d;
     float: right;
-    font-size: 28px;
-    font-weight: bold;
+    font-size: 32px;
+    font-weight: normal; /* Less bold */
     cursor: pointer;
+    transition: color 0.2s ease;
 }
 
 .close-button:hover, .close-button:focus {
-    color: black;
+    color: #333;
+}
+
+#edit-modal label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #34495e;
 }
 
 #edit-modal input {
-    width: 100%;
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-#upload-csv {
-    background-color: #007bff;
-    color: white;
-}
-
-#delete-selected {
-    background-color: #dc3545;
-    color: white;
+    width: calc(100% - 1rem); /* Account for padding */
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 #save-edit {
-    background-color: #28a745;
+    background-color: #007bff; /* Blue for save */
     color: white;
+    width: 100%; /* Full width button */
+    padding: 1rem;
+    font-size: 1.1em;
+}
+
+#save-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    #container {
+        padding: 1.5rem;
+        margin: 1rem 0;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack sections vertically */
+        gap: 1.5rem;
+    }
+
+    .roster-management {
+        flex-direction: column; /* Stack management elements vertically */
+        align-items: stretch; /* Stretch items to full width */
+    }
+
+    #csv-file,
+    .roster-management button {
+        width: 100%; /* Full width for inputs and buttons */
+        margin-bottom: 0.5rem; /* Add space between stacked elements */
+    }
+
+    #qr-reader {
+        max-width: 100%; /* Allow QR reader to take full width */
+    }
+
+    #student-roster li, #checked-in-list li {
+        flex-direction: column; /* Stack student info and timestamp */
+        align-items: flex-start;
+        padding: 0.8rem 1rem;
+    }
+
+    .roster-student-info {
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+
+    .roster-actions {
+        width: 100%; /* Full width for action buttons */
+        display: flex;
+        justify-content: flex-end; /* Align buttons to the right */
+        gap: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    button {
+        padding: 0.6rem 1rem;
+        font-size: 0.9em;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
 }

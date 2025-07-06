@@ -5,10 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR Code Student Check-in</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://www.vc-ja.com/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div id="container">
         <h1>Student Check-in</h1>
+
+        <div class="instructions">
+            <h2>How to Use This App:</h2>
+            <ol>
+                <li><strong>Upload Roster:</strong> Click "Choose File" to select a CSV file (ID,FirstName,LastName) and then "Upload Roster" to load your student list.</li>
+                <li><strong>Scan QR Codes:</strong> Use the camera feed below to scan student QR codes. The app will automatically check them in.</li>
+                <li><strong>Manage Roster:</strong> Edit student names/IDs or delete students directly from the "Student Roster" list. You can also multi-select and delete.</li>
+                <li><strong>Persistence:</strong> Your roster and checked-in students are saved in your browser and will remain even if you close the page.</li>
+            </ol>
+        </div>
         <div id="qr-reader" style="width: 500px;"></div>
         <div id="result">Scan a QR code to check in a student.</div>
 
