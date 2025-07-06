@@ -272,8 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
             } else {
                 setStatus(`${studentName} is already checked in.`, 'warning');
             }
-        }
-    } else {
+        } else {
             setStatus('Error: Student ID not found in roster.', 'error');
         }
     }
