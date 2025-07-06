@@ -1,30 +1,35 @@
-name: Deploy static content to Pages
-
-on:
-push:
-branches: ["main"]
-workflow_dispatch:
-
-permissions:
-contents: read
-pages: write
-id-token: write
-
-jobs:
-deploy:
-environment:
-name: github-pages
-url: ${{ steps.deployment.outputs.page_url }}
-runs-on: ubuntu-latest
-steps:
-- name: Checkout
-uses: actions/checkout@v4
-- name: Setup Pages
-uses: actions/configure-pages@v4
-- name: Upload artifact
-uses: actions/upload-pages-artifact@v3
-with:
-# Upload the 'client' directory
-path: './client'
-- name: Deploy to GitHub Pages
-id: deployment
+ 1 # Simple workflow for deploying static content to GitHub
+      Pages
+    2 name: Deploy static content to Pages
+    3
+    4 on:
+    5   push:
+    6     branches: ["main"]
+    7   workflow_dispatch:
+    8
+    9 permissions:
+   10   contents: read
+   11   pages: write
+   12   id-token: write
+   13
+   14 jobs:
+   15   deploy:
+   16     environment:
+   17       name: github-pages
+   18       url: ${{ steps.deployment.outputs.page_url }}
+   19     runs-on: ubuntu-latest
+   20     steps:
+   21       - name: Checkout
+   22         uses: actions/checkout@v4  # This line needs 8 spaces
+      of indentation
+   23       - name: Setup Pages
+   24         uses: actions/configure-pages@v4 # This line needs 8
+      spaces of indentation
+   25       - name: Upload artifact
+   26         uses: actions/upload-pages-artifact@v3
+   27         with:
+   28           # Upload the 'client' directory
+   29           path: './client'
+   30       - name: Deploy to GitHub Pages
+   31         id: deployment
+   32         uses: actions/deploy-pages@v4
